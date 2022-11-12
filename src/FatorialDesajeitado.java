@@ -8,7 +8,7 @@ public class FatorialDesajeitado {
         int res;
         List<Integer> nums = new ArrayList<>();
         while (n > 0) {
-            //Calcule o valor do fatorial de "n", atrinbuindo o retorno a "r".
+            //Calcule o valor do fatorial de "n", atrinbuindo o retorno a "res".
             nums.add(n);
             n--;
         }
@@ -39,12 +39,12 @@ public class FatorialDesajeitado {
                     if (passo == 4) {
                         resultado.add(lista.get(i) * lista.get(i + 1));//primeiro valor * segundo.
                     } else if (passo == 3) {
-                        resultado.add(lista.get(i) / lista.get(i + 1));//primeiro valor * segundo.
+                        resultado.add(lista.get(i) / lista.get(i + 1));//primeiro valor / segundo.
                     }
                     contar = contar - 2;//pegou 2 numeros da contagem.
-                    i++;
+                    i++;//passa para o próximo elemento.
                 } else {
-                    resultado.add(lista.get(i));//copia os próximos valores: terceiro e quarto.
+                    resultado.add(lista.get(i));//copia os próximos valores: terceiro ou quarto.
                     if (contar > 1) contar--; //continua a contagem até 1.
                     else contar = passo; //reinicia a contagem.
                 }
@@ -87,6 +87,4 @@ public class FatorialDesajeitado {
         }
         return resultado;//valor final.
     }
-
-
 }
